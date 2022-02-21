@@ -1,0 +1,345 @@
+/*******************************************************************************
+**                                    Font                                    **
+*******************************************************************************/
+/* VarelaRound - sans serif */
+/* source: https://github.com/avrahamcornfeld/Varela-Round-Hebrew */
+@font-face {
+  font-family: "VarelaRound";
+  src:         url("/fonts/VarelaRound/VarelaRound-Regular.woff2") format("woff2"),
+               url("/fonts/VarelaRound/VarelaRound-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style:  normal;
+}
+/* also supports bold, italic and bolditalic */
+
+/* DejavuSansMono - monospace */
+/* source: https://en.bestfonts.pro/font/dejavu-sans-mono */
+@font-face {
+  font-family: "DejaVuSansMono";
+  src:         url("/fonts/DejaVuSansMono/DejaVuSansMono-Regular.woff2") format("woff2"),
+               url("/fonts/DejaVuSansMono/DejaVuSansMono-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style:  normal;
+}
+@font-face {
+  font-family: "DejaVuSansMono";
+  src:         url("/fonts/DejaVuSansMono/DejaVuSansMono-Bold.woff2") format("woff2"),
+               url("/fonts/DejaVuSansMono/DejaVuSansMono-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style:  normal;
+}
+@font-face {
+  font-family: "DejavuSansMono";
+  src:         url("/fonts/DejaVuSansMono/DejaVuSansMono-Oblique.woff2") format("woff2"),
+               url("/fonts/DejaVuSansMono/DejaVuSansMono-Oblique.woff") format("woff");
+  font-weight: normal;
+  font-style:  italic;
+}
+@font-face {
+  font-family: "DejaVuSansMono";
+  src:         url("/fonts/DejaVuSansMono/DejaVuSansMono-BoldOblique.woff2") format("woff2"),
+               url("/fonts/DejaVuSansMono/DejaVuSansMono-BoldOblique.woff") format("woff");
+  font-weight: bold;
+  font-style:  italic;
+}
+
+/* AnonymousPro - monospace */
+/* source: https://www.marksimonson.com/fonts/view/anonymous-pro */
+/* source: https://en.bestfonts.pro/font/anonymous-pro */
+@font-face {
+  font-family: "AnonymousPro";
+  src:         url("/fonts/AnonymousPro/AnonymousPro-Regular.woff2") format("woff2"),
+               url("/fonts/AnonymousPro/AnonymousPro-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style:  normal;
+}
+@font-face {
+  font-family: "AnonymousPro";
+  src:         url("/fonts/AnonymousPro/AnonymousPro-Bold.woff2") format("woff2"),
+               url("/fonts/AnonymousPro/AnonymousPro-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style:  normal;
+}
+@font-face {
+  font-family: "AnonymousPro";
+  src:         url("/fonts/AnonymousPro/AnonymousPro-Italic.woff2") format("woff2"),
+               url("/fonts/AnonymousPro/AnonymousPro-Italic.woff") format("woff");
+  font-weight: normal;
+  font-style:  italic;
+}
+@font-face {
+  font-family: "AnonymousPro";
+  src:         url("/fonts/AnonymousPro/AnonymousPro-BoldItalic.woff2") format("woff2"),
+               url("/fonts/AnonymousPro/AnonymousPro-BoldItalic.woff") format("woff");
+  font-weight: bold;
+  font-style:  italic;
+}
+
+/*******************************************************************************
+**                              Global Variables                              **
+*******************************************************************************/
+:root {
+  /* color codes */
+  --clr_dark:        #303030;
+  --clr_grey:        #424242;
+  --clr_gold:        #F5CD7B;
+  --clr_white:       #CCCCCC;
+  --clr_red:         #EF2929;
+  --clr_green:       #4E9A06;
+  --clr_blue:        #548CFF;
+  --clr_gray:        #707070;
+  --clr_light_green: #70E000;
+
+  /* web theme colors */
+  --clr_bg:     var(--clr_dark);
+  --clr_obj:    var(--clr_grey);
+  --clr_fg:     var(--clr_gold);
+  --clr_action: var(--clr_white);
+  --clr_text:   var(--clr_white);
+
+  /* CLI colors */
+  --clr_cli_command:     var(--clr_white);
+  --clr_cli_showcommand: var(--clr_gray);
+  --clr_cli_root:        var(--clr_red);
+  --clr_cli_user:        var(--clr_green);
+  --clr_cli_block:       orange;
+  --clr_cli_dir:         var(--clr_blue);
+  --clr_cli_file:        var(--clr_light_green);
+}
+
+/*******************************************************************************
+**                              Global CSS Rules                              **
+*******************************************************************************/
+* {
+  /* size includes content, padding and border (but not MARGIN!) */
+  box-sizing: border-box;
+}
+
+body {
+  /* space between text on lines, 1.6 - unitless, relative to the font size */
+  line-height: 1.6;
+
+  /* webpage background */
+  background-color: var(--clr_bg);
+
+  /* break long words normally */
+  word-break: normal;
+}
+
+/*******************************************************************************
+**                                   Header                                   **
+*******************************************************************************/
+div.header {
+  /* display */
+  display:         flex;
+  flex-direction:  row;    /* main axis - X */
+  justify-content: left;   /* main axis (X) position for flex elements */
+  align-items:     center; /* cross-axis (Y) position for flex elements */
+  flex-wrap:       nowrap; /* DO NOT put overflowing items on new line */
+
+  /* size */
+  width:     100%;
+  max-width: 100%;
+
+  /* background */
+  background-color: var(--clr_bg);
+
+  /* border */
+  border-bottom-style: solid;
+  border-bottom-width: 8px;
+  border-bottom-color: var(--clr_fg);
+}
+/********************************* Left side **********************************/
+div.header_l {
+  /* display */
+  display:         flex;
+  flex-direction:  row;    /* main axis - X */
+  justify-content: left;   /* main axis (X) position for flex elements */
+  align-items:     center; /* cross-axis (Y) position for flex elements */
+  flex-wrap:       wrap;   /* put overflowing items on new line */
+
+  /* size */
+  flex-grow:   0;
+  flex-shrink: 0;
+  width:       auto;
+  height:      auto;
+
+  /* padding from the edges */
+  padding-left:   20px;
+  padding-right:  10px;
+  padding-top:    10px;
+  padding-bottom: 10px;
+}
+
+a.header_l {
+  /* stop positioning elements in <a> lower */
+  line-height: 0;
+  font-size: 0px;
+}
+
+img.header_l {
+  /* size */
+  height: 50px;
+  width:  auto;
+
+  /* shadow animation */
+  filter:                     drop-shadow(0px 0px 0px transparent);
+  transition-property:        filter;
+  transition-duration:        0.3s;
+  transition-timing-function: ease;
+}
+img.header_l:hover {
+  /* object shadow (offset-x offset-y blur-radius color) */
+  filter: drop-shadow(0px 0px 3px var(--clr_fg));
+}
+img.header_l:active {
+  /* object shadow (X offset, Y offset, intensity, color) */
+  filter: drop-shadow(0px 0px 6px var(--clr_action));
+}
+/********************************* Right Side *********************************/
+div.header_r {
+  /* display */
+  display:         flex;
+  flex-direction:  row;    /* main axis - X */
+  justify-content: right;  /* main axis (X) position for flex elements */
+  align-items:     center; /* cross-axis (Y) position for flex elements */
+  flex-wrap:       wrap;   /* put overflowing items on new line */
+
+  /* size */
+  flex-grow:   1;
+  flex-shrink: 1;
+  width:       auto;
+  height:      auto;
+
+  /* padding from the edges */
+  padding-left:   10px;
+  padding-right:  20px;
+  padding-top:    10px;
+  padding-bottom: 10px;
+}
+
+a.header_r {
+  /* text */
+  font-family: "VarelaRound";
+  font-size:   22px;
+  font-weight: normal;
+  font-style:  normal;
+  line-height: 30px; /* also affects animated underline position */
+
+  /* (no) underline */
+  position:        relative;
+  text-decoration: none;
+
+  /* margin from edges (padding is using empty area with animated underline) */
+  margin-left:   10px;
+  margin-right:  0px;
+  margin-top:    0px;
+  margin-bottom: 0px;
+}
+a.header_r::before {
+  /* animated underline - position */
+  content:  "";
+  display:  block;
+  position: absolute;
+  left:     0px;
+  bottom:   0px;
+
+  /* animated underline - size */
+  width:            100%;
+  height:           4px;
+  border-radius:    4px;
+
+  /* animated underline - animation */
+  transform: scaleX(0); /* X axis, 0 (empty) on start */
+
+  /* animated underline - transition animation effect */
+  transition-property:        transform;
+  transition-duration:        0.3s;
+  transition-timing-function: ease;
+}
+/* unvisited link */
+a.header_r:link {
+  color: var(--clr_fg);
+}
+a.header_r:link::before {
+  background-color: var(--clr_fg);
+}
+/* link was visited before */
+a.header_r:visited {
+  color: var(--clr_fg);
+}
+a.header_r:visited::before {
+  background-color: var(--clr_fg);
+}
+/* mouse is hovering over the object */
+a.header_r:hover {
+  color: var(--clr_fg);
+}
+a.header_r:hover::before {
+  transform: scaleX(1); /* X axis, 1 (full) on hover */
+  background-color: var(--clr_fg);
+}
+/* object is being clicked */
+a.header_r:active {
+  color: var(--clr_action);
+  /* object shadow (offset-x offset-y blur-radius color) */
+  filter: drop-shadow(0px 0px 6px var(--clr_action));
+}
+a.header_r:active::before {
+  background-color: var(--clr_action);
+}
+
+/* differentiate to see which main category webpage belongs to */
+a.header_active {
+  /* object shadow (offset-x offset-y blur-radius color) */
+  filter: drop-shadow(0px 0px 6px var(--clr_fg));
+
+  /* text */
+  color: var(--clr_action) !important;
+}
+
+/*******************************************************************************
+**                                  Article                                   **
+*******************************************************************************/
+article {
+  /* display */
+  display: block;
+
+  /* hide text, that overflows */
+  overflow: hidden;
+
+  /* size */
+  width:     100%;
+  max-width: 800px;
+
+  /* position */
+  margin: auto;
+
+  /* background */
+  background-color: var(--clr_bg);
+
+  /* padding */
+  padding-left:   5px;
+  padding-right:  5px;
+  padding-top:    0px;
+  padding-bottom: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+/*******************************************************************************
+**                            Different resolutions                           **
+*******************************************************************************/
+@media screen and (max-width: 229px) {
+  body {
+    /* break long words (at any character) to prevent overflow */
+    word-break: break-all;
+  }
+}

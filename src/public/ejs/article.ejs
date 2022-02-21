@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/fonts/FontAwesome6/css/fontawesome6.css">
+    <link rel="icon" type="image/x-icon" href="/ico/favicon.ico">
+    <title><%= template.title; %></title>
+  </head>
+  <body>
+    <div class="header">
+      <div class="header_l">
+        <a class="header_l" href="<%= template.header.href; %>">
+          <img class="header_l" src="<%= template.header.img; %>">
+        </a>
+      </div>
+      <div class="header_r">
+        <%_ if (template.header.activeSubroute === "home") { _%>
+          <a class="header_r header_active" href="/">Home</a>
+          <a class="header_r" href="/notes">Notes</a>
+          <a class="header_r" href="/tools">Tools</a>
+          <a class="header_r" href="/downloads">Downloads</a>
+          <a class="header_r" href="/about">About</a>
+        <%_ } else if (template.header.activeSubroute === "notes") { _%>
+          <a class="header_r" href="/">Home</a>
+          <a class="header_r header_active" href="/notes">Notes</a>
+          <a class="header_r" href="/tools">Tools</a>
+          <a class="header_r" href="/downloads">Downloads</a>
+          <a class="header_r" href="/about">About</a>
+        <%_ } else if (template.header.activeSubroute === "tools") { _%>
+          <a class="header_r" href="/">Home</a>
+          <a class="header_r" href="/notes">Notes</a>
+          <a class="header_r header_active" href="/tools">Tools</a>
+          <a class="header_r" href="/downloads">Downloads</a>
+          <a class="header_r" href="/about">About</a>
+        <%_ } else if (template.header.activeSubroute === "downloads") { _%>
+          <a class="header_r" href="/">Home</a>
+          <a class="header_r" href="/notes">Notes</a>
+          <a class="header_r" href="/tools">Tools</a>
+          <a class="header_r header_active" href="/downloads">Downloads</a>
+          <a class="header_r" href="/about">About</a>
+        <%_ } else if (template.header.activeSubroute === "about") { _%>
+          <a class="header_r" href="/">Home</a>
+          <a class="header_r" href="/notes">Notes</a>
+          <a class="header_r" href="/tools">Tools</a>
+          <a class="header_r" href="/downloads">Downloads</a>
+          <a class="header_r header_active" href="/about">About</a>
+        <%_ } else { _%>
+          <a class="header_r" href="/">Home</a>
+          <a class="header_r" href="/notes">Notes</a>
+          <a class="header_r" href="/tools">Tools</a>
+          <a class="header_r" href="/downloads">Downloads</a>
+          <a class="header_r" href="/about">About</a>
+        <%_ } _%>
+      </div>
+    </div>
+    <article>
+      <%- include(template.view) -%>
+    </article>
+  </body>
+</html>
