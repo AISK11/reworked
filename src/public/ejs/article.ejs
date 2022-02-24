@@ -12,47 +12,47 @@
   <body>
     <div class="header">
       <div class="header_l">
-        <a class="header_l" href="<%= template.header.href; %>">
-          <img class="header_l" src="<%= template.header.img; %>">
+        <a href="<%= template.header.href; %>">
+          <img src="<%= template.header.img; %>">
         </a>
       </div>
       <div class="header_r">
         <%_ if (template.header.activeSubroute === "home") { _%>
-          <a class="header_r header_active" href="/">Home</a>
-          <a class="header_r" href="/notes">Notes</a>
-          <a class="header_r" href="/tools">Tools</a>
-          <a class="header_r" href="/downloads">Downloads</a>
-          <a class="header_r" href="/about">About</a>
+          <a class="header_active" href="/">Home</a>
+          <a href="/notes">Notes</a>
+          <a href="/tools">Tools</a>
+          <a href="/downloads">Downloads</a>
+          <a href="/about">About</a>
         <%_ } else if (template.header.activeSubroute === "notes") { _%>
-          <a class="header_r" href="/">Home</a>
-          <a class="header_r header_active" href="/notes">Notes</a>
-          <a class="header_r" href="/tools">Tools</a>
-          <a class="header_r" href="/downloads">Downloads</a>
-          <a class="header_r" href="/about">About</a>
+          <a href="/">Home</a>
+          <a class="header_active" href="/notes">Notes</a>
+          <a href="/tools">Tools</a>
+          <a href="/downloads">Downloads</a>
+          <a href="/about">About</a>
         <%_ } else if (template.header.activeSubroute === "tools") { _%>
-          <a class="header_r" href="/">Home</a>
-          <a class="header_r" href="/notes">Notes</a>
-          <a class="header_r header_active" href="/tools">Tools</a>
-          <a class="header_r" href="/downloads">Downloads</a>
-          <a class="header_r" href="/about">About</a>
+          <a href="/">Home</a>
+          <a href="/notes">Notes</a>
+          <a class="header_active" href="/tools">Tools</a>
+          <a href="/downloads">Downloads</a>
+          <a href="/about">About</a>
         <%_ } else if (template.header.activeSubroute === "downloads") { _%>
-          <a class="header_r" href="/">Home</a>
-          <a class="header_r" href="/notes">Notes</a>
-          <a class="header_r" href="/tools">Tools</a>
-          <a class="header_r header_active" href="/downloads">Downloads</a>
-          <a class="header_r" href="/about">About</a>
+          <a href="/">Home</a>
+          <a href="/notes">Notes</a>
+          <a href="/tools">Tools</a>
+          <a class="header_active" href="/downloads">Downloads</a>
+          <a href="/about">About</a>
         <%_ } else if (template.header.activeSubroute === "about") { _%>
-          <a class="header_r" href="/">Home</a>
-          <a class="header_r" href="/notes">Notes</a>
-          <a class="header_r" href="/tools">Tools</a>
-          <a class="header_r" href="/downloads">Downloads</a>
-          <a class="header_r header_active" href="/about">About</a>
+          <a href="/">Home</a>
+          <a href="/notes">Notes</a>
+          <a href="/tools">Tools</a>
+          <a href="/downloads">Downloads</a>
+          <a class="header_active" href="/about">About</a>
         <%_ } else { _%>
-          <a class="header_r" href="/">Home</a>
-          <a class="header_r" href="/notes">Notes</a>
-          <a class="header_r" href="/tools">Tools</a>
-          <a class="header_r" href="/downloads">Downloads</a>
-          <a class="header_r" href="/about">About</a>
+          <a href="/">Home</a>
+          <a href="/notes">Notes</a>
+          <a href="/tools">Tools</a>
+          <a href="/downloads">Downloads</a>
+          <a href="/about">About</a>
         <%_ } _%>
       </div>
     </div>

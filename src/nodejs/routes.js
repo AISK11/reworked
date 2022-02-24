@@ -64,8 +64,59 @@ router.all("/notes", (req, res) => {
   res.render(`${PublicDir}/ejs/article.ejs`, { "template": template });
 });
 
+/*******************************************************************************
+**                                   Tools                                    **
+*******************************************************************************/
+router.all("/tools*", (req, res, next) => {
+  /* set data accordingly for website template */
+  template.header.activeSubroute = "tools";
+  /* execute next matched express server function */
+  next();
+});
 
+router.all("/tools", (req, res) => {
+  /* set data accordingly for website template */
+  template.title = "Tools";
+  template.view = `${PublicDir}/views/tools/tools.html`;
+  /* load website template with data */
+  res.render(`${PublicDir}/ejs/article.ejs`, { "template": template });
+});
 
+/*******************************************************************************
+**                                 Downloads                                  **
+*******************************************************************************/
+router.all("/downloads*", (req, res, next) => {
+  /* set data accordingly for website template */
+  template.header.activeSubroute = "downloads";
+  /* execute next matched express server function */
+  next();
+});
+
+router.all("/downloads", (req, res) => {
+  /* set data accordingly for website template */
+  template.title = "Downloads";
+  template.view = `${PublicDir}/views/downloads/downloads.html`;
+  /* load website template with data */
+  res.render(`${PublicDir}/ejs/article.ejs`, { "template": template });
+});
+
+/*******************************************************************************
+**                                   About                                    **
+*******************************************************************************/
+router.all("/about*", (req, res, next) => {
+  /* set data accordingly for website template */
+  template.header.activeSubroute = "about";
+  /* execute next matched express server function */
+  next();
+});
+
+router.all("/about", (req, res) => {
+  /* set data accordingly for website template */
+  template.title = "About";
+  template.view = `${PublicDir}/views/about/about.html`;
+  /* load website template with data */
+  res.render(`${PublicDir}/ejs/article.ejs`, { "template": template });
+});
 
 
 

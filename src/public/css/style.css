@@ -116,11 +116,11 @@
 }
 
 body {
-  /* space between text on lines, 1.6 - unitless, relative to the font size */
-  line-height: 1.6;
-
   /* webpage background */
   background-color: var(--clr_bg);
+
+  /* space between text on lines, 1.6 - unitless, relative to the font size */
+  line-height: 1.6;
 
   /* break long words normally */
   word-break: normal;
@@ -149,6 +149,7 @@ div.header {
   border-bottom-width: 8px;
   border-bottom-color: var(--clr_fg);
 }
+
 /********************************* Left side **********************************/
 div.header_l {
   /* display */
@@ -171,13 +172,13 @@ div.header_l {
   padding-bottom: 10px;
 }
 
-a.header_l {
+div.header_l a {
   /* stop positioning elements in <a> lower */
   line-height: 0;
   font-size: 0px;
 }
 
-img.header_l {
+div.header_l a img {
   /* size */
   height: 50px;
   width:  auto;
@@ -188,14 +189,15 @@ img.header_l {
   transition-duration:        0.3s;
   transition-timing-function: ease;
 }
-img.header_l:hover {
+div.header_l a img:hover {
   /* object shadow (offset-x offset-y blur-radius color) */
   filter: drop-shadow(0px 0px 3px var(--clr_fg));
 }
-img.header_l:active {
+div.header_l a img:active {
   /* object shadow (X offset, Y offset, intensity, color) */
   filter: drop-shadow(0px 0px 6px var(--clr_action));
 }
+
 /********************************* Right Side *********************************/
 div.header_r {
   /* display */
@@ -218,7 +220,7 @@ div.header_r {
   padding-bottom: 10px;
 }
 
-a.header_r {
+div.header_r a {
   /* text */
   font-family: "VarelaRound";
   font-size:   22px;
@@ -236,7 +238,7 @@ a.header_r {
   margin-top:    0px;
   margin-bottom: 0px;
 }
-a.header_r::before {
+div.header_r a::before {
   /* animated underline - position */
   content:  "";
   display:  block;
@@ -258,39 +260,39 @@ a.header_r::before {
   transition-timing-function: ease;
 }
 /* unvisited link */
-a.header_r:link {
+div.header_r a:link {
   color: var(--clr_fg);
 }
-a.header_r:link::before {
+div.header_r a:link::before {
   background-color: var(--clr_fg);
 }
 /* link was visited before */
-a.header_r:visited {
+div.header_r a:visited {
   color: var(--clr_fg);
 }
-a.header_r:visited::before {
+div.header_r a:visited::before {
   background-color: var(--clr_fg);
 }
 /* mouse is hovering over the object */
-a.header_r:hover {
+div.header_r a:hover {
   color: var(--clr_fg);
 }
-a.header_r:hover::before {
+div.header_r a:hover::before {
   transform: scaleX(1); /* X axis, 1 (full) on hover */
   background-color: var(--clr_fg);
 }
 /* object is being clicked */
-a.header_r:active {
+div.header_r a:active {
   color: var(--clr_action);
   /* object shadow (offset-x offset-y blur-radius color) */
   filter: drop-shadow(0px 0px 6px var(--clr_action));
 }
-a.header_r:active::before {
+div.header_r a:active::before {
   background-color: var(--clr_action);
 }
 
 /* differentiate to see which main category webpage belongs to */
-a.header_active {
+div.header_r a.header_active {
   /* object shadow (offset-x offset-y blur-radius color) */
   filter: drop-shadow(0px 0px 6px var(--clr_fg));
 
@@ -325,6 +327,227 @@ article {
   padding-bottom: 5px;
 }
 
+/*******************************************************************************
+**                                  Heading                                   **
+*******************************************************************************/
+div.heading {
+  /* display */
+  display:         flex;
+  flex-direction:  row;    /* main axis - X */
+  justify-content: left;   /* main axis (X) position for flex elements */
+  align-items:     center; /* cross-axis (Y) position for flex elements */
+  flex-wrap:       wrap;   /* put overflowing items on new line */
+
+  /* size */
+  width:     100%;
+  max-width: 100%;
+
+  /* space between text on lines, 1.6 - unitless, relative to the font size */
+  line-height: 1.6;
+
+  /* text */
+  color:       var(--clr_fg);
+}
+
+div.heading i {
+  /* size */
+  flex-grow:   0;
+  flex-shrink: 0;
+  width:       32px;
+
+  /* text */
+  font-size:   24px;
+
+  /* text position */
+  text-align: center;
+
+  /* margin from the edges */
+  padding-left:   0px;
+  padding-right:  5px;
+  padding-top:    0px;
+  padding-bottom: 0px;
+}
+
+div.heading h1 {
+  /* size */
+  flex-grow:   1;
+  flex-shrink: 1;
+  width:       auto;
+
+  /* text */
+  font-family: "VarelaRound";
+  font-size:   32px;
+  font-weight: bold;
+  font-style:  normal;
+
+  /* text position */
+  text-align: left;
+
+  /* margin from the edges */
+  padding-left:   5px;
+  padding-right:  0px;
+  padding-top:    0px;
+  padding-bottom: 0px;
+}
+
+/*******************************************************************************
+**                                    Menu                                    **
+*******************************************************************************/
+div.menu {
+  /* display */
+  display:               grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr)); /* 3 colums filling space equally (fr) */
+  grid-column-gap:       10px;
+  grid-row-gap:          10px;
+
+  /* padding from the edges */
+  padding-left:   0px;
+  padding-right:  0px;
+  padding-top:    0px;
+  padding-bottom: 30px;
+}
+
+/********************************* Right Side *********************************/
+div.menu_item {
+  /* display */
+  display:         flex;
+  flex-direction:  row;    /* main axis - X */
+  justify-content: left;   /* main axis (X) position for flex elements */
+  align-items:     center; /* cross-axis (Y) position for flex elements */
+  flex-wrap:       wrap;   /* put overflowing items on new line */
+
+  /* hide text, that overflows */
+  overflow: hidden;
+
+  /* rounded border */
+  border-radius: 6px;
+
+  /* make element unselectable */
+  user-select: none;
+
+  /* use pointer cursor */
+  cursor: pointer;
+
+  /* background */
+  background-color: var(--clr_obj);
+
+  /* animation */
+  position:                   relative;
+  transition-property:        background-color;
+  transition-duration:        0.3s;
+  transition-timing-function: ease;
+}
+/* mouse is hovering over the element */
+div.menu_item:hover {
+  background-color: var(--clr_fg);
+}
+/* element is being clicked */
+div.menu_item:active {
+  background-color: var(--clr_action);
+}
+
+div.menu_item a {
+  /* display */
+  display:         flex;
+  flex-direction:  row;    /* main axis - X */
+  justify-content: left;   /* main axis (X) position for flex elements */
+  align-items:     center; /* cross-axis (Y) position for flex elements */
+  flex-wrap:       nowrap; /* DO NOT put overflowing items on new line */
+
+  /* hide text, that overflows */
+  overflow: hidden;
+
+  /* size */
+  width:      100%;
+  height:     100%;
+  min-height: 40px;
+
+  /* remove space between text on lines */
+  line-height: 0;
+
+  /* text */
+  font-family: "VarelaRound";
+  font-size:   22px;
+  font-weight: normal;
+  font-style:  normal;
+  color:       var(--clr_fg);
+
+  /* animation */
+  position:                   relative;
+  transition-property:        color;
+  transition-duration:        0.3s;
+  transition-timing-function: ease;
+}
+/* unvisited element */
+div.menu_item a:link {
+  color:            var(--clr_fg);
+  text-decoration:  none;
+}
+/* element was visited before */
+div.menu_item a:visited {
+  color:            var(--clr_fg);
+  text-decoration:  none;
+}
+/* mouse is hovering over the element */
+div.menu_item a:hover {
+  color:            var(--clr_obj);
+  text-decoration:  none;
+}
+/* element is being clicked */
+div.menu_item a:active {
+  color:            var(--clr_obj);
+  text-decoration:  none;
+}
+
+div.menu_item a img {
+  /* size */
+  height:     auto;
+  width:      auto;
+  max-height: 30px;
+  max-width:  30px;
+
+  /* margin from the edges */
+  margin-left:   5px;
+  margin-right:  5px;
+  margin-top:    5px;
+  margin-bottom: 5px;
+}
+
+div.menu_item a i {
+  /* size */
+  height: 30px;
+  width:  30px;
+
+  /* space between text on lines */
+  line-height: 30px;
+
+  /* margin from the edges */
+  margin-left:   5px;
+  margin-right:  5px;
+  margin-top:    5px;
+  margin-bottom: 5px;
+
+  /* text position */
+  text-align: center;
+}
+
+div.menu_item a p {
+  /* size */
+  flex-grow:   1;
+  flex-shrink: 1;
+
+  /* text position */
+  text-align: center;
+
+  /* space between text on lines, 1.6 - unitless, relative to the font size */
+  line-height: 30px;
+
+  /* text */
+  font-family: "VarelaRound";
+  font-size:   22px;
+  font-weight: normal;
+  font-style:  normal;
+}
 
 
 
@@ -337,9 +560,9 @@ article {
 /*******************************************************************************
 **                            Different resolutions                           **
 *******************************************************************************/
-@media screen and (max-width: 229px) {
+/*@media screen and (max-width: 229px) {
   body {
     /* break long words (at any character) to prevent overflow */
-    word-break: break-all;
+/*    word-break: break-all;
   }
-}
+}*/
