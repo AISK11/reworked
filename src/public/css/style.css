@@ -111,19 +111,13 @@
 **                              Global CSS Rules                              **
 *******************************************************************************/
 * {
-  /* size includes content, padding and border (but not MARGIN!) */
-  box-sizing: border-box;
+  box-sizing: border-box; /* size = content + padding + border (not MARGIN!) */
 }
 
 body {
-  /* webpage background */
-  background-color: var(--clr_bg);
-
-  /* space between text on lines, 1.6 - unitless, relative to the font size */
-  line-height: 1.6;
-
-  /* break long words normally */
-  word-break: normal;
+  background-color: var(--clr_bg); /* webpage background */
+  line-height: 1.6; /* space between text on lines (1.6 = unitless) */
+  word-break: normal; /* break long words normally */
 }
 
 /*******************************************************************************
@@ -232,7 +226,7 @@ div.header_r a {
   position:        relative;
   text-decoration: none;
 
-  /* margin from edges (padding is using empty area with animated underline) */
+  /* margin from edges (cause padding is using empty area with animated underline) */
   margin-left:   10px;
   margin-right:  0px;
   margin-top:    0px;
@@ -342,11 +336,10 @@ div.heading {
   width:     100%;
   max-width: 100%;
 
-  /* space between text on lines, 1.6 - unitless, relative to the font size */
-  line-height: 1.6;
-
   /* text */
   color:       var(--clr_fg);
+
+  word-break: break-all;   /* avoid overflow by breaking words anywhere */
 }
 
 div.heading i {
@@ -361,11 +354,8 @@ div.heading i {
   /* text position */
   text-align: center;
 
-  /* margin from the edges */
-  padding-left:   0px;
+  /* padding from the edges */
   padding-right:  5px;
-  padding-top:    0px;
-  padding-bottom: 0px;
 }
 
 div.heading h1 {
@@ -383,11 +373,8 @@ div.heading h1 {
   /* text position */
   text-align: left;
 
-  /* margin from the edges */
+  /* padding from the edges */
   padding-left:   5px;
-  padding-right:  0px;
-  padding-top:    0px;
-  padding-bottom: 0px;
 }
 
 /*******************************************************************************
@@ -401,9 +388,6 @@ div.menu {
   grid-row-gap:          10px;
 
   /* padding from the edges */
-  padding-left:   0px;
-  padding-right:  0px;
-  padding-top:    0px;
   padding-bottom: 30px;
 }
 
@@ -549,9 +533,129 @@ div.menu_item a p {
   font-style:  normal;
 }
 
+/*******************************************************************************
+**                                   Text                                     **
+*******************************************************************************/
+div.text {
+  /* size */
+  width: 100%;
+}
 
 
 
+
+
+div.text h2 {
+  /* text */
+  font-family: "VarelaRound";
+  font-size:   26px;
+  font-weight: normal;
+  font-style:  normal;
+  color:       var(--clr_fg);
+
+  /* padding from top */
+  padding-top: 20px;
+}
+div.text h2:first-child {
+  /* padding from top */
+  color: red;
+
+}
+
+div.text p {
+  /* text */
+  font-family: "AnonymousPro";
+  font-size:   16px;
+  font-weight: normal;
+  font-style:  normal;
+  color:       var(--clr_text);
+}
+
+div.text a {
+  /* text */
+  color:       var(--clr_fg);
+  font-family: "AnonymousPro";
+  font-size:   16px;
+  font-weight: normal;
+  font-style:  italic;
+}
+
+/*********************************** Lists ************************************/
+/* true for every <ol> inside another <ol> */
+ol > ol {
+  padding-left: 16px;
+}
+/* true for every <ul> inside another <ul> */
+ul > ul {
+  padding-left: 16px;
+}
+/* true for every <ul> inside another <ol> */
+ol > ul {
+  padding-left: 16px;
+}
+/* true for every <ol> inside another <ul> */
+ul > ol {
+  padding-left: 16px;
+}
+
+ol {
+  /* list style */
+  list-style-position: inside;
+
+  /* counter */
+  list-style-type: none;
+  counter-reset:   section;
+
+  /* text */
+  font-family: "AnonymousPro";
+  font-size:   16px;
+  font-weight: normal;
+  font-style:  normal;
+  color:       var(--clr_text);
+}
+
+/* only for <li> inside <ol> */
+ol > li::before {
+  /* counter */
+  counter-increment: section;
+  content:           counters(section, ".") " ";
+
+  /* color */
+  color: var(--clr_fg);
+}
+
+ul {
+  /* list style */
+  list-style-position: inside;
+  list-style-type:     square;
+
+  /* text */
+  font-family: "AnonymousPro";
+  font-size:   16px;
+  font-weight: normal;
+  font-style:  normal;
+  color:       var(--clr_text);
+}
+
+li::marker {
+  /* color */
+  color: var(--clr_fg);
+}
+
+li {
+  /* padding */
+  padding-left:   0px;
+  padding-right:  0px;
+  padding-top:    4px;
+  padding-bottom: 4px;
+
+  /* text */
+  font-weight: bold;
+}
+
+/*******************************************************************************
+**                                    Code                                    **
+*******************************************************************************/
 
 
 
